@@ -30,10 +30,8 @@ function randomHeroName()
 {
 	$hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black"];
 	$hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil"]
-    $heroes = [$hero_firstnames, $hero_lastnames];
-    $randname = $heroes[rand(0, count($heroes))][rand(0, 10)];
-
-    echo $randname;
+	$heroes = [$hero_firstnames, $hero_lastnames];
+	echo $heroes[rand(0, count($heroes))][rand(0, 10)];
 }
 
 echo "Here is the name: " . combineNames();
