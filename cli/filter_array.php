@@ -5,9 +5,13 @@
  * Please modify only the function itself, nothing else
  */
 
-function filterArray($validOptions, $input) {
-	for ($i = 0; $i <= count($input); $i++) {
-		if (!in_array($input[$i], $validOptions)) {
+function filterArray($validOptions, $input)
+{
+	$count = count($input);
+
+	for ($i = 0; $i < $count; $i++) {
+		if (!in_array($input[$i], $validOptions, true)) {
+
 			unset($input[$i]);
 		}
 	}
