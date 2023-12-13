@@ -7,8 +7,11 @@ $database_user = '';
 $database_password = '';
 $database_name = '';
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = isset($_POST['username']) ? $_POST['username'] : null;
+$password = isset($_POST['password']) ? $_POST['password'] : null;
+if(is_null($username) || is_null($password)){
+	die(json_encode(["status"=> false, "Username and Password should not be empty"]));
+}
 
 if (!($connection = mysqli_connect($database_host, $database_user, $database_password, $database_name))) {
 	die(mysqli_connect_error());
@@ -33,5 +36,7 @@ if ($result->num_rows == 1) {
 		$response = ['status' => false];
 	}
 }
+
+mysqli_close($connection);
 
 die(json_encode($response));
