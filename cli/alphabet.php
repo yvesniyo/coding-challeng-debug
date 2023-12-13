@@ -5,8 +5,8 @@
  */
 
 $arr = [];
-for ($letter = 'a'; $letter <= 'z'; $letter++) {
-	array_push($arr, $letter);
+for ($letter = 97; $letter <= 122; $letter++) {
+	array_push($arr, chr($letter));
 }
 
 print_r($arr);
