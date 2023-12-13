@@ -9,7 +9,7 @@ function isTheLinkValid(string $link)
 	$unacceptables = array('https:', '.doc', '.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
 
 	foreach ($unacceptables as $unacceptable) {
-		if (strpos($link, $unacceptable) == true) {
+		if (strpos($link, $unacceptable) == true || strpos($link, $unacceptable) === 0) {
 			return false;
 		}
 	}
