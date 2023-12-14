@@ -6,7 +6,7 @@ $database_password = '';
 $database_name = '';
 
 $question_id = isset($_POST['id']) ? (int) $_POST["id"] : null;
-if (is_null($question_id) || !is_numeric($question_id)) {
+if (is_null($question_id) || !is_numeric($question_id)  || $question_id == 0) {
 
 	die(json_encode(["status" => false, "message" => "Invalid Question ID"]));
 }
